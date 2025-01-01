@@ -8,6 +8,7 @@ Welcome to the Password Manager project! This tool is designed to help you secur
 - [Installation](#installation)
 - [Screenshot](#screenshot)
 - [Usage](#usage)
+- [Testing](#testing)
 - [Contributing](#contributing)
 - [License](#license)
 - [Disclaimer](#disclaimer)
@@ -54,6 +55,17 @@ This is a simple demo and a screenshot of this tool
 3. Save a password:
 - Enter the website, username, and password when prompted.
 4. View saved passwords or generate a new password as needed.
+
+## Testing
+
+### Windows
+- Windows supports the command-line interface (CLI) with basic functionality, including color outputs (green text).
+- Make sure you use `python` or `python3` to run the application in Command Prompt or PowerShell.
+
+### Linux/macOS
+- On Linux and macOS, you may need to use `python3` instead of `python` to run the application.
+- Terminal environments on Linux/macOS support ANSI escape codes, so the green text should work without issue.
+
 
 ## Contributing
 
