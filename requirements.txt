@@ -1,3 +1,14 @@
+
+# requirements.txt
+
+# This file lists the dependencies required to run the Password Management Tool.
+# To install the required packages, run the following command:
+# pip install -r requirements.txt
+
+# cryptography is used for password encryption and decryption.
 cryptography==3.4.7
+
+
 install python
 pip install json, hashlib, getpass, sys, cryptography, base64, os, secrets, string
+
