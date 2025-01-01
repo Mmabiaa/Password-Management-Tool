@@ -6,6 +6,7 @@ Welcome to the Password Manager project! This tool is designed to help you secur
 
 - [Features](#features)
 - [Installation](#installation)
+- [Screenshot](#screenshot)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
@@ -32,6 +33,9 @@ pip install -r requirements.txt
 cd password-management-tool
 python app.py
 ```
+## Screenshot
+This is a simple demo and a screenshot of this tool
+![View](https://github.com/mmabiaa/password-management-tool/blob/main/Screenshot/Screenshot (21).png)
 
 
 ## Usage
