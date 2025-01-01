@@ -114,3 +114,4 @@ def view_saved_websites(key):
                 print(f"Password: {decrypted_password}\n")
     except FileNotFoundError:
         print('\n[+] No passwords saved yet...\n')
+
