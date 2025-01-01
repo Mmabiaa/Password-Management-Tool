@@ -35,7 +35,7 @@ python app.py
 ```
 ## Screenshot
 This is a simple demo and a screenshot of this tool
-![View](https://github.com/mmabiaa/password-management-tool/blob/main/Screenshot/Screenshot%20(21).png)
+![View](https://github.com/Mmabiaa/Password-Management-Tool/blob/main/Screenshot/Screenshot%20(21).png)
 
 
 ## Usage
