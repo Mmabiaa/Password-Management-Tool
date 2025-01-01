@@ -1,3 +1,6 @@
+# Author - Mmabiaa
+# password_manager.py
+
 import json
 import hashlib
 import getpass
@@ -10,9 +13,11 @@ import os
 import secrets
 import string
 
+
 def hash_password(password):
     """Hash the password using SHA256."""
     return hashlib.sha256(password.encode()).hexdigest()
+
 
 def register():
     """Register a new user."""
@@ -24,9 +29,12 @@ def register():
         json.dump({'username': username, 'master_password': master_password_hash}, file)
         print('\n[+] Registration Completed!!\n')
 
+
 def login(username, entered_password):
+    
     """Login to the password manager."""
     try:
+        
         with open('user_data.json', 'r') as file:
             user_data = json.load(file)
             stored_password = user_data.get('master_password')
@@ -35,10 +43,12 @@ def login(username, entered_password):
             if entered_password_hash == stored_password and username == user_data.get('username'):
                 print('\n[+] Login Successful...\n')
                 return True
+                
             else:
                 print('\n[+] Invalid Login Credentials... Login Failed!!\n')
                 print('\n[+] Use the registered credentials to login')
                 sys.exit()
+                
     except Exception:
         print('\n[+] You must register to begin...!!!\n')
         sys.exit()
@@ -73,9 +83,11 @@ def generate_password(length=12):
 def save_password(website, username, password, key):
     """Save a password for a website."""
     encrypted_password = encrypt_password(password, key)
+    
     try:
         with open('password.json', 'r') as file:
             passwords = json.load(file)
+            
     except FileNotFoundError:
         passwords = {}
     
