@@ -1,3 +1,6 @@
+# Author - Mmabiaa
+# password_manager.py
+
 import json
 import hashlib
 import getpass
@@ -10,9 +13,11 @@ import os
 import secrets
 import string
 
+
 def hash_password(password):
     """Hash the password using SHA256."""
     return hashlib.sha256(password.encode()).hexdigest()
+
 
 def register():
     """Register a new user."""
@@ -24,9 +29,12 @@ def register():
         json.dump({'username': username, 'master_password': master_password_hash}, file)
         print('\n[+] Registration Completed!!\n')
 
+
 def login(username, entered_password):
+    
     """Login to the password manager."""
     try:
+        
         with open('user_data.json', 'r') as file:
             user_data = json.load(file)
             stored_password = user_data.get('master_password')
@@ -35,10 +43,12 @@ def login(username, entered_password):
             if entered_password_hash == stored_password and username == user_data.get('username'):
                 print('\n[+] Login Successful...\n')
                 return True
+                
             else:
                 print('\n[+] Invalid Login Credentials... Login Failed!!\n')
                 print('\n[+] Use the registered credentials to login')
                 sys.exit()
+                
     except Exception:
         print('\n[+] You must register to begin...!!!\n')
         sys.exit()
@@ -73,9 +83,11 @@ def generate_password(length=12):
 def save_password(website, username, password, key):
     """Save a password for a website."""
     encrypted_password = encrypt_password(password, key)
+    
     try:
         with open('password.json', 'r') as file:
             passwords = json.load(file)
+            
     except FileNotFoundError:
         passwords = {}
     
@@ -102,46 +114,3 @@ def view_saved_websites(key):
                 print(f"Password: {decrypted_password}\n")
     except FileNotFoundError:
         print('\n[+] No passwords saved yet...\n')
-
-def main():
-    while True:
-        print('---Welcome to Password Manager---')
-        print('--------------------------------------------------------------------------------------------------------------------------------')
-        print('1.Register \n2.Login \n3.Quit')
-        choice = input ('Enter a choice...: ')
-        
-        if choice == '1':
-            register()
-        elif choice == '2':
-            username = input('Enter your username: ')
-            entered_password = getpass.getpass('Enter your master password: ')
-            if login(username, entered_password):
-                master_key = generate_key(entered_password)
-                while True:
-                    print('\n---Password Manager Menu---')
-                    print('1.Save Password \n2.View Saved Passwords \n3.Generate Password \n4.Back')
-                    action = input ('Enter a choice...: ')
-                    
-                    if action == '1':
-                        website = input('Enter the website: ')
-                        username = input('Enter the username: ')
-                        password = getpass.getpass('Enter the password: ')
-                        save_password(website, username, password, master_key)
-                    elif action == '2':
-                        view_saved_websites(master_key)
-                    elif action == '3':
-                        length = int(input('Enter the desired password length (default is 12): ') or 12)
-                        generated_password = generate_password(length)
-                        print(f'\nGenerated Password: {generated_password}\n')
-                    elif action == '4':
-                        break
-                    else:
-                        print('Invalid input... Please try again!')
-        elif choice == '3':
-            print('Thanks for using Password Manager...Bye!!!')
-            break
-        else:
-            print('Invalid input... Please try again!')
-
-if __name__ == "__main__":
-    main()
