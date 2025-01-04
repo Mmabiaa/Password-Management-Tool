@@ -2,6 +2,7 @@
 # app.py
 
 import getpass
+# import other module associated to this file.
 from password_manager import *
 
 # Function to print in green
