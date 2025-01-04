@@ -28,7 +28,7 @@ def register():
 
     with open('user_data.json', 'w') as file:
         json.dump({'username': username, 'master_password': master_password_hash}, file)
-        print('\n[+] Registration Completed!!\n')
+        print_green('\n[+] Registration Completed!!\n')
 
 
 def login(username, entered_password):
@@ -42,16 +42,16 @@ def login(username, entered_password):
             entered_password_hash = hash_password(entered_password)
 
             if entered_password_hash == stored_password and username == user_data.get('username'):
-                print('\n[+] Login Successful...\n')
+                print_green('\n[+] Login Successful...\n')
                 return True
                 
             else:
-                print('\n[+] Invalid Login Credentials... Login Failed!!\n')
-                print('\n[+] Use the registered credentials to login')
+                print_green('\n[+] Invalid Login Credentials... Login Failed!!\n')
+                print_green('\n[+] Use the registered credentials to login')
                 sys.exit()
                 
     except Exception:
-        print('\n[+] You must register to begin...!!!\n')
+        print_green('\n[+] You must register to begin...!!!\n')
         sys.exit()
 
 def generate_key(master_password):
@@ -99,20 +99,20 @@ def save_password(website, username, password, key):
 
     with open('password.json', 'w') as file:
         json.dump(passwords, file)
-        print(f'\n[+] Password saved for {website}...\n')
+        print_green(f'\n[+] Password saved for {website}...\n')
 
 def view_saved_websites(key):
     """View saved websites and their passwords."""
     try:
         with open('password.json', 'r') as file:
             passwords = json.load(file)
-            print("Websites you saved...")
+            print_green("Websites you saved...")
             for website, data in passwords.items():
                 encrypted_password = data['password'].encode()
                 decrypted_password = decrypt_password(encrypted_password, key)
-                print(f"Website: {website}")
-                print(f"Username: {data['username']}")
-                print(f"Password: {decrypted_password}\n")
+                print_green(f"Website: {website}")
+                print_green(f"Username: {data['username']}")
+                print_green(f"Password: {decrypted_password}\n")
     except FileNotFoundError:
-        print('\n[+] No passwords saved yet...\n')
+        print_green('\n[+] No passwords saved yet...\n')
 
