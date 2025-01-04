@@ -12,6 +12,7 @@ import base64
 import os
 import secrets
 import string
+from green import print_green
 
 
 def hash_password(password):
