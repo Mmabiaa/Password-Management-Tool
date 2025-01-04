@@ -1,16 +1,9 @@
 # app.py
-
-
-from green import print_green
-import getpass
-# import other module associated to this file.=======
 # Author - Mmabiaa
 
 import getpass
-
+from green import print_green
 from password_manager import *
-
-
 
 
 def check_user_choice(choice):
