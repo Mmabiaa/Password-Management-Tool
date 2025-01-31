@@ -59,11 +59,11 @@ This is a simple demo and a screenshot of this tool
 
 ## Testing
 
-### Windows
+### On Windows
 - Windows supports the command-line interface (CLI) with basic functionality, including color outputs (green text).
 - Make sure you use `python` or `python3` to run the application in Command Prompt or PowerShell.
 
-### Linux/macOS
+### On Linux/macOS
 - On Linux and macOS, you may need to use `python3` instead of `python` to run the application.
 - Terminal environments on Linux/macOS support ANSI escape codes, so the green text should work without issue.
 
