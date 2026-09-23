@@ -1,4 +1,3 @@
-
 # Password Management Tool
 
 Welcome to the Password Manager project! This tool is designed to help you securely manage your passwords and sensitive information. With features for registration, login, saving passwords, viewing saved passwords, and generating strong passwords, this application provides a user-friendly interface for managing your credentials safely.
