@@ -83,4 +83,3 @@ This is a basic implementation of a password manager and is not intended for pro
 ---
 
 Thank you for using Password Manager! Your security is our priority. If you have any questions or feedback, feel free to reach out!
-
